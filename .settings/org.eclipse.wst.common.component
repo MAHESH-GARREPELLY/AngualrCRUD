@@ -2,7 +2,7 @@
                 
     
     
-    <wb-module deploy-name="AngularCRUD">
+    <wb-module deploy-name="Springmvc.java.config">
                                 
         
         
@@ -19,11 +19,8 @@
                                 
         
         
-        <property name="context-root" value="AngularCRUD"/>
-                                
-        
-        
         <property name="java-output-path" value="/AngularCRUD/target/classes"/>
+        <property name="context-root" value="Springmvc.java.config"/>
                             
     
     

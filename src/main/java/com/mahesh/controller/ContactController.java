@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.mahesh.angularjs.model.Contact;
-import com.mahesh.angularjs.service.ContactService;
+import com.mahesh.service.*;
+import com.mahesh.model.Contact;
 
 @Controller
 public class ContactController {
@@ -41,24 +40,17 @@ public class ContactController {
 	}
 
 	@RequestMapping("/edit")
-	public ModelAndView editContactForm(@RequestParam long id) {
+	public ModelAndView editContactForm(@RequestParam Integer id) {
 	    ModelAndView mav = new ModelAndView("edit_customer");
 	    Contact contact = contactService.get(id);
 	    mav.addObject("contact", contact);
 	    return mav;    
 	}
 	@RequestMapping("/delete")
-	public String deleteContactForm(@RequestParam long id) {
+	public String deleteContactForm(@RequestParam Integer id) {
 	contactService.delete(id);
 	
 	    return "redirect:/";       
 	    }
-	@RequestMapping("/search")
-	public ModelAndView search(@RequestParam String keyword) {
-	    List<Contact> result = contactService.search(keyword);
-	    ModelAndView mav = new ModelAndView("search");
-	    mav.addObject("result", result);
-	 
-	    return mav;    
-	}
+	
 }
