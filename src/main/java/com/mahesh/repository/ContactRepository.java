@@ -1,5 +1,5 @@
 
-public interface ContactRepository CrudRepository<Customer, Long> 
+public interface ContactRepository CrudRepository<Contact, Long> 
 {
     
 } 
